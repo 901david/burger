@@ -11,11 +11,11 @@ app.use(methodOverride("_method"));
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+// Import routes and give the server access to them.
+var routes = require("./controllers/burgers_controller.js");
 
+app.use("/", routes);
 
-
-
-// app.use("/", routes);
 
 app.listen(PORT, ()=>{
     console.log("Server up and Running on Port: " + PORT);

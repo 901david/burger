@@ -8,7 +8,7 @@ var dao = {
       }
       callback(result);
     });
-  },,
+  },
   insertOne: function(table, insertObj, callback) {
     var queryString = "INSERT INTO " + table + "SET ?";
     connection.query(queryString, insertObj, function(err, result) {
@@ -19,7 +19,7 @@ var dao = {
     });
   },
   updateOne: function(table, objColVals, condition, callback) {
-    var queryString = "UPDATE " + table + "SET ? WHERE" + condition;
+    var queryString = "UPDATE " + table + "SET ? WHERE " + condition;
     connection.query(queryString, objColVals, function(err, result) {
       if (err) {
         throw err;
