@@ -25,7 +25,7 @@ router.put("/:id", (req, res)=> {
       res.redirect("/");
     });
 });
-router.delete("/", (req, res)=> {
+router.delete("/:id", (req, res)=> {
   burger.delete(()=>{
     res.redirect("/");
   });
