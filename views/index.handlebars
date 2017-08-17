@@ -24,7 +24,6 @@
   {{#each burgers}}
   {{#if this.devoured}}
   <div class="well well-lg"><b>{{this.burger_name}}</b><form action="/{{this.id}}?_method=PUT" method="POST">
-    <input type="hidden" name="devoured" value="false">
     <button type="submit">Make Another</button>
   </form><form action="/{{this.id}}?_method=DELETE" method="POST">
     <button type="submit">Delete</button>
@@ -38,7 +37,6 @@
 <form action="/?_method=POST" method="POST">
   <h4>Burger Name: </h4>
   <input type="text" name="burger_name">
-  <input type="hidden" name="devoured" value="false">
   <button type="submit">Submit</button>
 </form>
 </div>

@@ -15,13 +15,14 @@ router.get("/", (req, res)=>{
 });
 // Post route to create a new burger
 router.post("/", (req, res)=> {
+  console.log(req.body);
     burger.create(req.body, ()=>{
       res.redirect("/");
     });
 });
 router.put("/:id", (req, res)=> {
     let conditionObj = {id: req.params.id};
-    burger.update({devour: req.body.devour}, conditionObj, ()=>{
+    burger.update({devoured: req.body.devour}, conditionObj, ()=>{
       res.redirect("/");
     });
 });

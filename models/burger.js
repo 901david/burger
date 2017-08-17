@@ -7,15 +7,13 @@ var burger = {
       callback(res);
     });
   },
-  create: function (callback)
+  create: function (req, callback)
    {
-    //  What is this?
-    let insertObj = req.body;
-    dao.insertOne("burgers", insertObj, (res)=> {
+    dao.insertOne("burgers", req, (res)=> {
         callback(res)
     });
   },
-  update: function (callback) {
+  update: function (objColVals, condition, callback) {
     dao.updateOne("burgers", objColVals, condition, (res)=> {
         callback(res)
     });
