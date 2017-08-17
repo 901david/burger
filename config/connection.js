@@ -17,7 +17,7 @@ else {
              else {
                return key
              }
-           }
+           },
    database: "burgers_db"
  });
 }
