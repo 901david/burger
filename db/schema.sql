@@ -12,6 +12,3 @@ PRIMARY KEY (id)
 SELECT * FROM burgers;
 
 
-CREATE DATABASE todolist;
-USE todolist;
-SELECT * FROM todo;

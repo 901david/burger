@@ -29,8 +29,8 @@ var dao = {
     });
   },
   deleteOne: function(table, conditionObj, callback) {
-    var queryString = "DELETE FROM " + table + "WHERE ?";
-    connection.query(queryString, conditionObj, function(err, result) {
+    var queryString = "DELETE FROM " + table + " WHERE ?";
+    connection.query(queryString, [conditionObj], function(err, result) {
       if (err) {
         throw err;
       }

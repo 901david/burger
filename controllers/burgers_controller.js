@@ -9,16 +9,16 @@ router.get("/", (req, res)=>{
   burger.all((data)=> {
     var burgersDBInfo = {
       burgers: data
-      };
-      res.render ("index", burgersDBInfo);
+    };
+    res.render ("index", burgersDBInfo);
   });
 });
 // Post route to create a new burger
 router.post("/", (req, res)=> {
   console.log(req.body);
-    burger.create(req.body, ()=>{
-      res.redirect("/");
-    });
+  burger.create(req.body, ()=>{
+    res.redirect("/");
+  });
 });
 router.put("/:id/:bool", (req, res)=> {
   let conditionObj = {id: req.params.id};
@@ -36,7 +36,7 @@ router.put("/:id/:bool", (req, res)=> {
 
 });
 router.delete("/:id", (req, res)=> {
-  burger.delete(()=>{
+  burger.delete({id: req.params.id}, ()=>{
     res.redirect("/");
   });
 });

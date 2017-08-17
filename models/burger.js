@@ -8,20 +8,20 @@ var burger = {
     });
   },
   create: function (req, callback)
-   {
+  {
     dao.insertOne("burgers", req, (res)=> {
-        callback(res)
+      callback(res)
     });
   },
   update: function (objColVals, condition, callback) {
     dao.updateOne("burgers", objColVals, condition, (res)=> {
-        callback(res)
+      callback(res)
     });
   },
-  delete: function (callback) {
-      dao.deleteOne("burgers", conditionObj, (res)=> {
-          callback(res)
-      });
+  delete: function (req, callback) {
+    dao.deleteOne("burgers", req, (res)=> {
+      callback(res)
+    });
   }
 };
 module.exports = burger;

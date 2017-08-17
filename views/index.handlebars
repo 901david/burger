@@ -1,42 +1,42 @@
 <div class="row">
-<div class="container">
-<div class="col-lg-4 col-lg-offset-4">
-  <div class="col-lg-12">
-  <img src="assets/images/burger.png" alt="Burger picture" class="img-responsive">
-</div>
-<h1 id="mainTitle"> Eat-Da-Burger</h1>
-</div>
-<div class="col-lg-12">
-<div class="col-lg-4 col-lg-offset-1" id="undevouredBurgers">
-  {{#each burgers}}
-  {{#unless this.devoured}}
-  <div class="well well-lg"><b>{{this.burger_name}}</b><form action="/{{this.id}}/0?_method=PUT" method="POST">
-    <button type="submit">Devour</button>
-  </form><form action="/{{this.id}}?_method=DELETE" method="POST">
-    <button type="submit">Delete</button>
-  </form></div>
-  {{/unless}}
-  {{/each}}
-</div>
-<div class="col-lg-4 col-lg-offset-1" id="devouredBurgers">
-  {{#each burgers}}
-  {{#if this.devoured}}
-  <div class="well well-lg"><b>{{this.burger_name}}</b><form action="/{{this.id}}/1?_method=PUT" method="POST">
-    <button type="submit">Make Another</button>
-  </form><form action="/{{this.id}}?_method=DELETE" method="POST">
-    <button type="submit">Delete</button>
-  </form></div>
+  <div class="container">
+    <div class="col-lg-4 col-lg-offset-4">
+      <div class="col-lg-12">
+        <img src="assets/images/burger.png" alt="Burger picture" class="img-responsive">
+      </div>
+      <h1 id="mainTitle"> Eat-Da-Burger</h1>
+    </div>
+    <div class="col-lg-12">
+      <div class="col-lg-4 col-lg-offset-1" id="undevouredBurgers">
+        {{#each burgers}}
+        {{#unless this.devoured}}
+        <div class="well well-lg"><b>{{this.burger_name}}</b><form action="/{{this.id}}/0?_method=PUT" method="POST">
+          <button type="submit">Devour</button>
+        </form><form action="/{{this.id}}?_method=DELETE" method="POST">
+          <button type="submit">Delete</button>
+        </form></div>
+        {{/unless}}
+        {{/each}}
+      </div>
+      <div class="col-lg-4 col-lg-offset-1" id="devouredBurgers">
+        {{#each burgers}}
+        {{#if this.devoured}}
+        <div class="well well-lg"><b>{{this.burger_name}}</b><form action="/{{this.id}}/1?_method=PUT" method="POST">
+          <button type="submit">Make Another</button>
+        </form><form action="/{{this.id}}?_method=DELETE" method="POST">
+          <button type="submit">Delete</button>
+        </form></div>
 
-  {{/if}}
-  {{/each}}
-</div>
-</div>
-<div class="col-lg-4 col-lg-offset-4">
-<form action="/?_method=POST" method="POST">
-  <h4>Burger Name: </h4>
-  <input type="text" name="burger_name">
-  <button type="submit">Submit</button>
-</form>
-</div>
-</div>
+        {{/if}}
+        {{/each}}
+      </div>
+    </div>
+    <div class="col-lg-4 col-lg-offset-4">
+      <form action="/?_method=POST" method="POST">
+        <h4>Burger Name: </h4>
+        <input type="text" name="burger_name">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
 </div>

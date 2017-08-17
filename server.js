@@ -18,5 +18,5 @@ app.use("/", routes);
 
 
 app.listen(PORT, ()=>{
-    console.log("Server up and Running on Port: " + PORT);
+  console.log("Server up and Running on Port: " + PORT);
 });
