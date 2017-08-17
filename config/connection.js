@@ -10,18 +10,18 @@ else {
    port: 3306,
    host: "localhost",
    user: "root",
-   password: ()=> {
-             if (process.env.KEY) {
-               return process.env.KEY;
-             }
-             else {
-               return key
-             }
-           },
+   password: "4984",
    database: "burgers_db"
  });
 }
-
+// ()=> {
+//           if (process.env.KEY) {
+//             return process.env.KEY;
+//           }
+//           else {
+//             return key
+//           }
+//         },
 
 // Make connection.
 connection.connect(function(err) {
