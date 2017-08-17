@@ -10,7 +10,14 @@ else {
    port: 3306,
    host: "localhost",
    user: "root",
-   password: process.env.KEY || key,
+   password: ()=> {
+             if (process.env.KEY) {
+               return process.env.KEY;
+             }
+             else {
+               return key
+             }
+           };
    database: "burgers_db"
  });
 }
