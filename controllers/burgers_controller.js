@@ -20,11 +20,20 @@ router.post("/", (req, res)=> {
       res.redirect("/");
     });
 });
-router.put("/:id", (req, res)=> {
-    let conditionObj = {id: req.params.id};
-    burger.update({devoured: req.body.devour}, conditionObj, ()=>{
+router.put("/:id/:bool", (req, res)=> {
+  let conditionObj = {id: req.params.id};
+  if (req.params.bool === "0") {
+    burger.update({devoured: true}, conditionObj, ()=>{
       res.redirect("/");
     });
+  }
+  else {
+    burger.update({devoured: false}, conditionObj, ()=>{
+      res.redirect("/");
+    });
+  }
+
+
 });
 router.delete("/:id", (req, res)=> {
   burger.delete(()=>{

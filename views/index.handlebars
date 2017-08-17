@@ -10,20 +10,18 @@
 <div class="col-lg-4 col-lg-offset-1" id="undevouredBurgers">
   {{#each burgers}}
   {{#unless this.devoured}}
-  <div class="well well-lg"><b>{{this.burger_name}}</b><form action="/{{this.id}}?_method=PUT" method="POST">
-    <input type="hidden" name="devoured" value="true">
+  <div class="well well-lg"><b>{{this.burger_name}}</b><form action="/{{this.id}}/0?_method=PUT" method="POST">
     <button type="submit">Devour</button>
   </form><form action="/{{this.id}}?_method=DELETE" method="POST">
     <button type="submit">Delete</button>
   </form></div>
-  <!-- Need to add in devour button -->
   {{/unless}}
   {{/each}}
 </div>
 <div class="col-lg-4 col-lg-offset-1" id="devouredBurgers">
   {{#each burgers}}
   {{#if this.devoured}}
-  <div class="well well-lg"><b>{{this.burger_name}}</b><form action="/{{this.id}}?_method=PUT" method="POST">
+  <div class="well well-lg"><b>{{this.burger_name}}</b><form action="/{{this.id}}/1?_method=PUT" method="POST">
     <button type="submit">Make Another</button>
   </form><form action="/{{this.id}}?_method=DELETE" method="POST">
     <button type="submit">Delete</button>
